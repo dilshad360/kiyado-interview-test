@@ -1,6 +1,7 @@
 import { ShoppingCart } from "lucide-react"
 import { useCart } from "../contexts/CardContext";
-import CartCard from "./CartCard";
+import CartCard from "./Card/CartCard";
+import EmptyImage from "../assets/empty-cart.png"
 
 
 function Cart() {
@@ -28,7 +29,7 @@ function Cart() {
                 <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay"></label>
                 <div className="menu bg-base-200 text-base-content min-h-full w-96 p-6">
                 <p className=" text-center text-2xl font-semibold pb-4">Your Cart</p>
-                {cart.length > 0 && <>
+                {cart.length > 0 ? <>
                 <div className="space-y-3">
                     {cart.map(product => (
                         <CartCard key={product.id} product={product} />
@@ -39,7 +40,7 @@ function Cart() {
                 <p className="text-2xl text-green-700 font-semibold">${totalPrice.toFixed(2)}</p>
                 </div>
                     <button className="btn btn-primary" onClick={() => alert("Order Placed")}>Checkout</button>
-                    </>}
+                    </> : <div className="flex justify-center"><img src={EmptyImage} alt="empty-cart" width={200} /></div>}
                 </div>
             </div>
         </div>

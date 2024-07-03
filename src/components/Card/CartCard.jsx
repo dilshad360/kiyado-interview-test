@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 
 import { Minus, Plus, X } from "lucide-react";
-import { useCart } from "../contexts/CardContext";
+import { useCart } from "../../contexts/CardContext";
 
 function CartCard({ product }) {
     const { removeFromCart, updateQuantity } = useCart();

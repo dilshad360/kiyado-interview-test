@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useCart } from "../contexts/CardContext";
+import { useCart } from "../../contexts/CardContext";
 
 
 
@@ -7,7 +7,7 @@ function Card({ product }) {
     const { addToCart } = useCart();
 
     return (
-        <div className="card bg-base-100 w-96 h-96 shadow-xl border">
+        <div className="card bg-base-100 w-full sm:w-96 h-96 shadow-xl border">
             <figure className="w-auto h-48 bg-white py-2">
                 <img
                     src={product.image}
