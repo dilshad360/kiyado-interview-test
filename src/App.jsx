@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Card from "./components/Card/ProductCard";
 import { CartProvider } from "./contexts/CardContext";
 import { useProducts } from "./contexts/ProductContext";
+import CategoryFilter from "./components/CategoryFilter";
 
 
 function App() {
@@ -27,9 +28,9 @@ function App() {
 
   return (
     <div className="w-full pb-10 pt-20 flex flex-col  items-center">
-    <div>
+    <div className="flex justify-between w-3/4 flex-col md:flex-row py-2">
     <h2 className="text-3xl font-semibold pb-4 ">Our Products</h2>
-
+    <CategoryFilter/>
     </div>
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
       {filteredProducts.map(product => (
